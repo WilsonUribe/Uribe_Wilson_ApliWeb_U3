@@ -2,6 +2,6 @@
 
 ```bash
 npm install                     
-npm run dev: all  
+npm run dev:all  
 ```
 
