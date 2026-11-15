@@ -1,0 +1,30 @@
+@startuml diagrama
+title Componentes - Gestor de tareas
+skinparam shadowing false
+skinparam componentStyle rectangle
+
+component "App.vue" as App #F1EFE8
+component "TasksView" as TasksView #EEEDFE
+component "TaskFormView" as FormView #EEEDFE
+component "TaskFilters" as Filters #E1F5EE
+component "TaskList" as List #E1F5EE
+component "TaskItem" as Item #E1F5EE
+component "StatusPanel" as Status #E1F5EE
+component "TaskForm" as Form #E1F5EE
+component "tasksStore" as Store #F1EFE8
+component "Servicio HTTP" as Http #F1EFE8
+node "API Node.js" as API
+
+App --> TasksView
+App --> FormView
+TasksView --> Filters
+TasksView --> List
+TasksView --> Status
+List --> Item
+FormView --> Status
+FormView --> Form
+TasksView --> Store
+Store --> Http
+FormView --> Http
+Http --> API
+@enduml
